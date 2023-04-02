@@ -18,7 +18,7 @@ export const writeCsvFormatFakeData = async (
       await writeFile(filename, keys)
     }
     const values = Object.values(fake).join(comma)
-    await writeFile(filename, values)
+    await appendFile(filename, newLine + values)
   }
   return `write ${numberOfItems} items to ${filename} file`
 }
